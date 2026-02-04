@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal 💕</title>
+    <meta name="description" content="A special Valentine's Day proposal just for you">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="background-hearts"></div>
+    <div class="container">
+        <!-- Page 1: Name Input -->
+        <div id="nameInput" class="page">
+            <h2 style="font-family: 'Pacifico', cursive; color: var(--secondary); margin-bottom: 1rem;">💕 A Special
+                Message Awaits 💕</h2>
+            <label for="name">What's your beautiful name?</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" onkeydown="checkEnter(event)">
+            <button onclick="startProposal()">Continue ✨</button>
+        </div>
+
+        <!-- Page 2: Reasons I Love You -->
+        <div id="reasonsPage" class="page" style="display:none;">
+            <h2 style="font-family: 'Pacifico', cursive; color: var(--secondary);">Why You're Special to Me 💖</h2>
+            <div id="reasonsList"></div>
+            <button onclick="showQuiz()">Continue 💕</button>
+        </div>
+
+        <!-- Page 3: Love Quiz -->
+        <div id="quizPage" class="page" style="display:none;">
+            <h2 style="font-family: 'Pacifico', cursive; color: var(--secondary);">A Little Quiz for You 🌹</h2>
+            <p id="quizQuestion" style="font-size: 1.2rem; margin-bottom: 1.5rem;"></p>
+            <div id="quizOptions"></div>
+        </div>
+
+        <!-- Page 4: Valentine Proposal -->
+        <div id="question" class="page" style="display:none;">
+            <p id="proposalQuestion"></p>
+            <button id="yesButton" onclick="showMessage()">Yes 💖</button>
+            <button id="noButton" onmouseover="moveNoButton()" onclick="handleNoClick()">No</button>
+        </div>
+
+        <!-- Page 5: Celebration -->
+        <div id="celebrationPage" class="page" style="display:none;">
+            <div id="celebrationContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
