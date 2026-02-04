@@ -49,8 +49,9 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
     width: 90%;
     max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
+    /* Removed restrictive max-height and overflow to prevent "box" feeling when content grows */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
     animation: fadeInScale 0.8s ease-out forwards;
 }
 

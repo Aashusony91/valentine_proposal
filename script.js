@@ -199,8 +199,11 @@ function moveNoButton() {
 
 // Handle touch events for mobile
 function handleNoTouch(e) {
-    e.preventDefault();
-    moveNoButton();
+    if (noCount >= 3) {
+        e.preventDefault();
+        moveNoButton();
+    }
+    // Otherwise let the click happen so handleNoClick() can fire if they want
 }
 
 
