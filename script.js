@@ -177,21 +177,32 @@ function moveNoButton() {
     noButton.innerText = noPhrases[Math.min(noCount, noPhrases.length - 1)];
     noCount++;
 
-    yesScale += 0.2;
+    yesScale += 0.15;
     yesButton.style.transform = `scale(${yesScale})`;
 
-    if (noCount >= 4) {
-        const maxX = window.innerWidth - noButton.offsetWidth - 40;
-        const maxY = window.innerHeight - noButton.offsetHeight - 40;
+    // Move button after a few attempts
+    if (noCount >= 3) {
+        // Calculate safe bounds for mobile
+        const padding = 60;
+        const maxX = Math.max(padding, window.innerWidth - noButton.offsetWidth - padding);
+        const maxY = Math.max(padding, window.innerHeight - noButton.offsetHeight - padding);
 
-        const randomX = Math.max(20, Math.random() * maxX);
-        const randomY = Math.max(20, Math.random() * maxY);
+        const randomX = padding + Math.random() * (maxX - padding);
+        const randomY = padding + Math.random() * (maxY - padding);
 
         noButton.style.position = 'fixed';
         noButton.style.left = `${randomX}px`;
         noButton.style.top = `${randomY}px`;
+        noButton.style.zIndex = '9999';
     }
 }
+
+// Handle touch events for mobile
+function handleNoTouch(e) {
+    e.preventDefault();
+    moveNoButton();
+}
+
 
 function handleNoClick() {
     const questionText = document.getElementById("proposalQuestion");

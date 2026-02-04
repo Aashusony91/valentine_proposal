@@ -45,7 +45,8 @@
         <div id="question" class="page" style="display:none;">
             <p id="proposalQuestion"></p>
             <button id="yesButton" onclick="showMessage()">Yes 💖</button>
-            <button id="noButton" onmouseover="moveNoButton()" onclick="handleNoClick()">No</button>
+            <button id="noButton" onmouseover="moveNoButton()" ontouchstart="handleNoTouch(event)"
+                onclick="handleNoClick()">No</button>
         </div>
 
         <!-- Page 5: Celebration -->

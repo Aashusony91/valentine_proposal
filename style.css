@@ -303,18 +303,148 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
     .container {
-        padding: 1.5rem;
+        padding: 1.2rem;
+        width: 95%;
+        max-height: 85vh;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    input {
+        width: 90%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+        margin: 8px 5px;
     }
 
     #proposalQuestion {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
     }
 
-    input,
-    button {
-        padding: 0.8rem 1.2rem;
+    .reason-item {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+        margin: 0.4rem 0;
+    }
+
+    #reasonsList {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .quiz-option {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #quizOptions {
+        gap: 0.6rem;
+    }
+
+    /* Fix for No button on mobile - use click instead of hover */
+    #noButton {
+        /* On mobile, the button should respond to touch/click, not hover */
+        transition: all 0.2s ease;
+    }
+
+    #yesButton {
+        min-width: 100px;
+    }
+
+    /* Celebration text */
+    #celebrationContent h1 {
+        font-size: 1.8rem !important;
+    }
+
+    #celebrationContent p {
+        font-size: 1rem !important;
+    }
+
+    /* Smaller explosions on mobile */
+    .heart {
+        font-size: 1.5rem;
+    }
+
+    .sparkle {
         font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        bottom: 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Background hearts smaller on mobile */
+    .bg-heart {
+        font-size: 16px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+    .container {
+        padding: 1rem;
+    }
+
+    #proposalQuestion {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .reason-item {
+        font-size: 0.85rem;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Remove hover effects on touch devices */
+    button:hover {
+        transform: none;
+    }
+
+    .quiz-option:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Make buttons easier to tap */
+    button {
+        min-height: 48px;
+        min-width: 80px;
+    }
+
+    .quiz-option {
+        min-height: 48px;
     }
 }
